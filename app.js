@@ -48,7 +48,7 @@ app.post('/', async(req, res) => {
 
   // Send email
   try {
-    return res.status.json({
+    return res.status(200).json({
       MAIL: process.env.MAIL,
       PASS: process.env.PASS,
       RECEIVER_MAIL: process.env.RECEIVER_MAIL
