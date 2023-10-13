@@ -48,11 +48,6 @@ app.post('/', async(req, res) => {
 
   // Send email
   try {
-    return res.status(200).json({
-      MAIL: process.env.MAIL,
-      PASS: process.env.PASS,
-      RECEIVER_MAIL: process.env.RECEIVER_MAIL
-    })
     const info = await transporter.sendMail(mailOptions)
     res.status(200).json({response: info.response})
   } catch (error) {
