@@ -1,8 +1,15 @@
 const express = require('express')
 const app = express()
+const cors = require("cors");
 const nodemailer = require("nodemailer");
 require('dotenv').config()
 
+const corsOptions = {
+  origin: "https://rohan-thamke-portfolio.netlify.app",
+  optionsSuccessStatus: 200,
+};
+
+app.use(cors(corsOptions));
 app.use(express.json())
 
 app.get('/', (req, res) => {
