@@ -5,7 +5,7 @@ const nodemailer = require("nodemailer");
 require('dotenv').config()
 
 const corsOptions = {
-  origin: ["https://rohan-thamke.netlify.app", "http://localhost:5173"],
+  origin: ["https://rohan-thamke.app", "http://localhost:5173"],
   optionsSuccessStatus: 200,
 };
 
