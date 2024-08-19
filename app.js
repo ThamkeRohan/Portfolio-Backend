@@ -5,7 +5,7 @@ const nodemailer = require("nodemailer");
 require('dotenv').config()
 
 const corsOptions = {
-  origin: ["https://rohan-thamke.netlify.app", "http://localhost:3000"],
+  origin: ["https://rohan-thamke.netlify.app", "http://localhost:5173"],
   optionsSuccessStatus: 200,
 };
 
@@ -41,13 +41,20 @@ app.post('/', async(req, res) => {
     subject,
     html: `
       <section
-        style="padding: 2rem"
+        style="padding: 0.5rem"
       >
-        <h3>Message from ${name}</h3>
-        <h3>Email: ${email}</h3>
+        <h2>New message from Portfolio</h2>
         <div>
-          <h3>Message:</h3>
-          <p style="margin-bottom: 30px;">${message}</p>
+          <p><strong>Sender's Name: </strong></p>
+          <p>${name}</p>
+        </div>
+        <div>
+          <p><strong>Sender's Email: </strong></p>
+          <p>${email}</p>
+        </div>
+        <div>
+          <p><strong>Message: </strong></p>
+          <p>${message}</p>
         </div>
    </section>
     `,
